@@ -19,6 +19,7 @@ class Category
 
   def update
     sql = "UPDATE categories SET name = $1"
+    # FIXME where id = $5
     values = [@name]
     SqlRunner.run(sql, values)
   end
