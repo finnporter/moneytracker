@@ -29,6 +29,8 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
+  # ***** CLASS METHODS ***** #
+
   def self.delete_all
     sql = "DELETE FROM merchants"
     SqlRunner.run(sql)

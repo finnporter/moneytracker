@@ -10,7 +10,9 @@ Transaction.delete_all
 
 
 category1 = Category.new('name' => 'food')
+category2 = Category.new('name' => 'clothes')
 category1.save
+category2.save
 
 merchant1 = Merchant.new('name' => 'Sainsbury')
 merchant1.save

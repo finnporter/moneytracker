@@ -29,9 +29,23 @@ class Category
     SqlRunner.run(sql, values)
   end
 
+  # ***** CLASS METHODS ***** #
+
+  def self.find_all
+    sql = "SELECT * FROM categories"
+    results = SqlRunner.run(sql)
+    all_categories = map_helper(results)
+  end
+
   def self.delete_all
     sql = "DELETE FROM categories"
     SqlRunner.run(sql)
+  end
+
+  # ***** HELPER METHODS ***** #
+
+  def self.map_helper results
+    results.map { |result| Category.new(result) }
   end
 
 end

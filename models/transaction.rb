@@ -32,6 +32,8 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
+  # ***** CLASS METHODS ***** #
+
   def self.delete_all
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
