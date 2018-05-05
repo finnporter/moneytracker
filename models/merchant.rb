@@ -18,9 +18,8 @@ class Merchant
   end
 
   def update
-    sql = "UPDATE merchants SET name = $1"
-    # FIXME where id = $5
-    values = [@name]
+    sql = "UPDATE merchants SET name = $1 WHERE id = $2"
+    values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 
