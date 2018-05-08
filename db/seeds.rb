@@ -4,9 +4,9 @@ require_relative '../models/category'
 require_relative '../models/merchant'
 require_relative '../models/transaction'
 
+Transaction.delete_all
 Category.delete_all
 Merchant.delete_all
-Transaction.delete_all
 
 
 category1 = Category.new('name' => 'food')

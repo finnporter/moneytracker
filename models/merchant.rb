@@ -31,8 +31,21 @@ class Merchant
 
   # ***** CLASS METHODS ***** #
 
+  def self.find_all
+    sql = "SELECT * FROM merchants"
+    results = SqlRunner.run(sql)
+    all_categories = map_helper(results)
+  end
+
   def self.delete_all
     sql = "DELETE FROM merchants"
     SqlRunner.run(sql)
   end
+
+  # ***** HELPER METHODS ***** #
+
+  def self.map_helper results
+    results.map { |result| Category.new(result) }
+  end
+
 end
