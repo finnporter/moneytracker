@@ -10,3 +10,5 @@ end
 get "/categories/new" do
   erb :"category/new"
 end
+
+# TODO create post route for creating new categories
