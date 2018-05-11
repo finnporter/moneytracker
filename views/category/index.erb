@@ -1,7 +1,12 @@
-<% @categories.each do |category| %>
-<p> <%= category.name %>
-<% end %>
-<br>
 <form class="button" method="GET" action="/categories/new">
   <input type="submit" value="Create new category">
 </form>
+
+<br>
+
+<% @categories.each do |category| %>
+<p> <%= category.name %>
+<form class="button" method="GET" action="/categories/<%= category.id %>/edit ">
+  <input type="submit" value="edit">
+</form>
+<% end %>
