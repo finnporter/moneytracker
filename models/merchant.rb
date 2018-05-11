@@ -45,7 +45,7 @@ class Merchant
   # ***** HELPER METHODS ***** #
 
   def self.map_helper results
-    results.map { |result| Category.new(result) }
+    results.map { |result| Merchan.new(result) }
   end
 
 end
