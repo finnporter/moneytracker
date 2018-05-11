@@ -6,3 +6,7 @@ get "/categories" do
   @categories = Category.find_all
   erb :"category/index"
 end
+
+get "/categories/new" do
+  erb :"category/new"
+end
