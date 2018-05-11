@@ -11,4 +11,7 @@ get "/categories/new" do
   erb :"category/new"
 end
 
-# TODO create post route for creating new categories
+post "/categories" do
+  Category.new(params).save
+  redirect to "/categories"
+end
