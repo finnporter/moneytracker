@@ -1,0 +1,15 @@
+<h1> Edit this category! </h1>
+
+<form method="POST" action="/merchants/<%= @merchant.id %> ">
+  <div class="form-wrapper">
+    <div class="form-el">
+      <label for="name"> Merchant name: </label>
+      <input type="text" name="name" id="name" />
+    </div>
+  
+    <div>
+      <input type="submit" value="Edit merchant" />
+    </div>
+
+  </div>
+</form>

@@ -29,6 +29,14 @@ class Merchant
     SqlRunner.run(sql, values)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM merchants
+    WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    return Merchant.new(result)
+  end
+
   # ***** CLASS METHODS ***** #
 
   def self.find_all
@@ -45,7 +53,7 @@ class Merchant
   # ***** HELPER METHODS ***** #
 
   def self.map_helper results
-    results.map { |result| Merchan.new(result) }
+    results.map { |result| Merchant.new(result) }
   end
 
 end
