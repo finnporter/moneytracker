@@ -9,4 +9,8 @@
 <form class="button" method="GET" action="/categories/<%= category.id %>/edit ">
   <input type="submit" value="edit">
 </form>
+
+<form class="button" method="POST" action="/categories/<%= category.id %>/delete ">
+  <input type="submit" value="delete">
+</form>
 <% end %>

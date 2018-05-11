@@ -21,11 +21,17 @@ end
 
 # EDIT
 get "/categories/:id/edit" do
-  @category = Category.find_all[0]
+  @category = Category.find(params['id'])
   erb :"category/edit"
 end
 
 post "/categories/:id" do
   Category.new(params).update
+  redirect to "/categories"
+end
+
+# DESTROY
+post "/categories/:id/delete" do
+  Category.find(params['id']).delete
   redirect to "/categories"
 end
