@@ -8,7 +8,7 @@ class Transaction
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @date = options['date']
-    @amount = options['amount'].to_i
+    @amount = options['amount'].to_f
     @merchant_id = options['merchant_id'].to_i
     @category_id = options['category_id'].to_i
     @expense = true
@@ -48,7 +48,7 @@ class Transaction
   # ***** HELPER METHODS ***** #
 
   def self.map_helper results
-    results.map { |result| Transaction.new(result) }
+    results.map { |result| Transaction  .new(result) }
   end
 
 
