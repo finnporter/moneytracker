@@ -11,9 +11,15 @@
 
 <% @transactions.each do |transaction| %>
 <p> Date: <%= transaction.date %> </p>
-<p> £<%= transaction.amount %> </p>
+<p <%= 'id="red"' if transaction.expense == 't' %>> £<%= transaction.amount %> </p>
 <p> Merchant: <%= transaction.find_merchant.name %> </p>
 <p> Category: <%= transaction.find_category.name %> </p>
+
+<form method="GET" action="/transactions/<%= transaction.id %>/edit">
+ <div>
+      <input type="submit" value="Edit transaction" />
+</div>
+</form>
 
 
 <form method="POST" action="/transactions/<%= transaction.id %>/delete">
