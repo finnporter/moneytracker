@@ -1,7 +1,22 @@
-#red {
-	color: red;
+body {
+	background-color: #6a9bc3;
+	color: azure;
 }
 
-#green {
-	color: green;
+h1 {
+	color: peachpuff;
+}
+
+a {
+	color: peachpuff;
+}
+
+#red {
+	color: #b41435;
+	font-weight: bolder;
+}
+
+.green {
+	color: #0d7862;
+	font-weight: bolder;
 }
