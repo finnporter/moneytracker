@@ -1,4 +1,5 @@
 require_relative '../db/sql_runner.rb'
+require_relative 'merchant'
 
 class Transaction
   
@@ -32,6 +33,13 @@ class Transaction
     SqlRunner.run(sql, values)
   end
 
+  def find_merchant
+    sql = "SELECT * FROM merchants WHERE id = $1"
+    values = [@merchant_id]
+    result = SqlRunner.run(sql, values)[0]
+    return Merchant.new(result)
+  end
+
   # ***** CLASS METHODS ***** #
 
   def self.find_all
@@ -48,7 +56,7 @@ class Transaction
   # ***** HELPER METHODS ***** #
 
   def self.map_helper results
-    results.map { |result| Transaction  .new(result) }
+    results.map { |result| Transaction.new(result) }
   end
 
 

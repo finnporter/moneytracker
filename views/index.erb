@@ -1,7 +1,8 @@
 <h1> Money Tracker! </h1>
 
 <% @transactions.each do |transaction| %>
-<p> <%= transaction.date %> </p>
+<p> Date: <%= transaction.date %> </p>
 <p> £<%= transaction.amount %> </p>
+<p> Merchant: <%= transaction.find_merchant.name %> </p>
 <hr>
 <% end %>
