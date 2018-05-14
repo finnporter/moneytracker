@@ -17,3 +17,9 @@ post "/transactions" do
   Transaction.new(params).save
   redirect to "/"
 end
+
+# DESTROY
+post "/transactions/:id/delete" do
+  Transaction.find(params['id']).delete
+  redirect to "/"
+end

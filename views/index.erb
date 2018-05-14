@@ -1,9 +1,26 @@
 <h1> Money Tracker! </h1>
 
+<form method="GET" action="/transactions/new">
+ <div>
+      <input type="submit" value="Create new transaction" />
+</div>
+</form>
+
+<hr>
+
+
 <% @transactions.each do |transaction| %>
 <p> Date: <%= transaction.date %> </p>
 <p> £<%= transaction.amount %> </p>
 <p> Merchant: <%= transaction.find_merchant.name %> </p>
 <p> Category: <%= transaction.find_category.name %> </p>
+
+
+<form method="POST" action="/transactions/<%= transaction.id %>/delete">
+ <div>
+      <input type="submit" value="Delete transaction" />
+</div>
+</form>
+
 <hr>
 <% end %>
