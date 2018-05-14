@@ -40,6 +40,13 @@ class Transaction
     return Merchant.new(result)
   end
 
+  def find_category
+    sql = "SELECT * FROM categories WHERE id = $1"
+    values = [@category_id]
+    result = SqlRunner.run(sql, values)[0]
+    return Category.new(result)
+  end
+
   # ***** CLASS METHODS ***** #
 
   def self.find_all

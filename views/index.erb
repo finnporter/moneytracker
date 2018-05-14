@@ -4,5 +4,6 @@
 <p> Date: <%= transaction.date %> </p>
 <p> £<%= transaction.amount %> </p>
 <p> Merchant: <%= transaction.find_merchant.name %> </p>
+<p> Category: <%= transaction.find_category.name %> </p>
 <hr>
 <% end %>
