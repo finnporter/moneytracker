@@ -7,7 +7,7 @@ class Budget
 
 	def initialize options
 		@id = options['id'].to_i if options['id']
-		@current_budget = options['current_budget']
+		@current_budget = options['current_budget'].to_i
 	end
 
 	def save
@@ -29,6 +29,11 @@ class Budget
     sql = "SELECT * FROM budgets"
     results = SqlRunner.run(sql)
     all_categories = map_helper(results)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM budgets"
+    SqlRunner.run(sql)
   end
 
   # ***** HELPER METHODS ***** #

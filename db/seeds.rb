@@ -3,6 +3,7 @@ require 'pry-byebug'
 require_relative '../models/category'
 require_relative '../models/merchant'
 require_relative '../models/transaction'
+require_relative '../models/budget'
 
 Transaction.delete_all
 Category.delete_all
@@ -29,6 +30,8 @@ transaction2 = Transaction.new('date' => '2018-05-05',
 							   'category_id' => category1.id)
 transaction1.save
 transaction2.save
+
+Budget
 
 binding.pry
 nil
